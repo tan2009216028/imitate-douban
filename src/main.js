@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import vueScrollBehavior from 'vue-scroll-behavior'
+import 'normalize.css'
 
 Vue.config.productionTip = false
 
