@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <router-view></router-view>
-        <router-view name="pageView"></router-view>
+        <router-view name="centerPage"></router-view>
     </div>
 </template>
 <script>

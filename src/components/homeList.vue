@@ -2,16 +2,16 @@
     <div class="db-home-list">
         <ul id="homeList">
             <li v-for="item in list">
-                <a href="">
+                <router-link :to="{name: 'detailPage', params: { id: item.id },query:{activityId:item.id}}">
                     <div class="db-feed-content">
                         <div class="db-feed-title">
                             <h3>{{item.title}}</h3>
                             <p>{{item.content | subStr}}</p>
                         </div>
-                        <div class="db-feed-img"><p></p></div>
+                        <div class="db-feed-img"><p :style="{backgroundImage: 'url('+item.image_hlarge+')'}"></p></div>
                     </div>
-                    <div class="author">by&nbsp;<span class="name">豆瓣电影</span><span class="db-feed-label right">来自栏目 瓣嘴</span></div>
-                </a>
+                    <div class="author">by&nbsp;<span class="name">{{item.owner.name}}</span><span class="db-feed-label right">主题 {{item.category_name}}</span></div>
+                </router-link>
             </li>
         </ul>
     </div>
@@ -30,19 +30,14 @@
                 required: true
             }
         },
-        watch: {
-            list: function (t, e) {
-                debugger
-            }
-        },
         data () {
             return {
             }
         },
         filters: {
             subStr: function (value) {
-                value.replace(/<.+>|\s/, '')
-                return value.slice(0, 30)
+                value.replace(/<.+>|\s/, '');
+                return value
             }
         }
     }
@@ -50,15 +45,14 @@
 
 <style lang="scss" scoped>
     .db-home-list{
-
-    }
-    .db-home-list{
         li{
             padding: 2.5rem 1.8rem 2.5rem 0;
             margin-left: 1.8rem;
+            border-bottom: 1px solid #e3e3e3;
         }
         .db-feed-content{
             display: flex;
+            word-break: break-all;
         }
         .author{
             padding-top: 1rem;
@@ -100,7 +94,9 @@
         }
         .db-feed-img p{
             padding-top: 100%;
-            background: transparent url("//qnmob2.doubanio.com/img/files/file-1501671545.jpg?imageView2/2/q/80/w/330/h/330/format/jpg") center center no-repeat;
+            background-color: transparent;
+            background-position: center center;
+            background-repeat: no-repeat;
             background-size: cover;
         }
     }

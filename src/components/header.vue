@@ -44,6 +44,7 @@
         padding: 0 1.8rem;
         height: 4.8rem;
         border-bottom: 0.1rem solid #f3f3f3;
+        background: #fff;
     }
 
     .db-header-bar {

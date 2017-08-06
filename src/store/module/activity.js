@@ -11,10 +11,10 @@ import myInterface from '@/interface'
 
 //vuex应用层级状态
 const state = {
-    list: [], //定义数据
+    list: [], //更新活动数据
     temp: [],
-    step: 0, //定义目前数据条数位置
-    eventItem: {}
+    step: 0, //更新活动目前数据条数位置
+    detailItem: {} //更新活动详情数据
 }
 //修改 Vuex 状态
 const mutations = {
@@ -22,8 +22,8 @@ const mutations = {
         state.step += 5;
         state.list = state.list.concat(payload.res);
     },
-    getSingleEvent (state, payload) {
-        state.eventItem = payload.res
+    getDetail (state, payload) {
+        state.detailItem = payload.res
     }
 }
 //异步修改Vuex 状态
@@ -33,36 +33,35 @@ const actions = {
      * step: 5
      * count: 5
      */
-    getMoreData ({commit,state}) {//es6参数解耦，这里的大对象其实是context，其包含commit和state
+    getActivityList ({commit,state}) {//es6参数解耦，这里的对象其实是context，其包含commit和state
         request
-            // .get(myInterface.getActivityList+'?loc='+myInterface.cityId+'&start=' + state.step + '&count='+myInterface.count)
-            .get(myInterface.getActivityList2+'?loc_id='+myInterface.cityId+'&next_date=')
+            .get(myInterface.getActivityList+'?loc='+myInterface.cityId+'&start=' + state.step + '&count='+myInterface.count)
             .use(jsonp)
             .end((err, res) => {
                 if (!err) {
                     commit({
                         type: 'getMoreData',
                         res: res.body.events
-                    })
+                    });
                 }
             })
     },
     /**
-     * Getting single event
+     * 获取活动详情
      * id: event id
      */
-    getSingleEvent ({commit, state}, payload) {
+    getActivityDetail ({commit, state}, payload) {
         return new Promise((resolve, reject) => {
             request
-                .get('https://api.douban.com/v2/event/' + payload.id)
+                .get(myInterface.getActivityDetail + payload.activityId)//接收传递过来的活动id
                 .use(jsonp)
                 .end((err, res) => {
                     if (!err) {
                         commit({
-                            type: 'getSingleEvent',
+                            type: 'getDetail',
                             res: res.body
-                        })
-                        resolve(res)
+                        });
+                        resolve(res.body);
                     }
                 })
         })

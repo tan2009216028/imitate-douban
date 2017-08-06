@@ -15,7 +15,7 @@
     import loading from '@/components/loading'
     import homeList from '@/components/homeList'
     export default {
-        name: 'homeView',
+        name: 'homePage',
         data() {
             return {}
         },
@@ -30,14 +30,14 @@
         methods:{
             onInfinite(){
                 setTimeout(() => {
-                    this.getMoreData();
+                    this.getActivityList();
                     //$InfiniteLoading:loaded事件,它将告诉InfiniteLoading组件，数据已经下载成功。
                     this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded')
-                }, 10000)
+                }, 1000)
             },
             // 异步action暴露辅助方法
             ...mapActions([
-                'getMoreData'
+                'getActivityList'
             ])
         }
     }
