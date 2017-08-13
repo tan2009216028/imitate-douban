@@ -1,7 +1,7 @@
 <template>
     <div class="db-movie-rating" v-if="rating">
         <template v-if="fullStar === 0">
-            <span>暂无评分</span>
+            <span class="db-movie-zero">暂无评分</span>
         </template>
         <template v-else>
             <template v-for="n in fullStar">
@@ -15,6 +15,7 @@
             </template>
             <span class="db-movie-average">{{average}}</span>
         </template>
+        <slot name="ratingsCount"></slot>
     </div>
     　　
 </template>
@@ -68,7 +69,11 @@
             background-size: 1.3rem 1.3rem;
         }
         .db-movie-average {
-            padding-right: 0.8rem;
+            padding: 0.2rem 0.8rem 0 0;
+            width: auto;
+            height: auto;
+        }
+        .db-movie-zero{
             width: auto;
             height: auto;
         }

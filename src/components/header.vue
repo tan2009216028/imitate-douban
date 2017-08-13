@@ -45,6 +45,7 @@
         height: 4.8rem;
         border-bottom: 0.1rem solid #f3f3f3;
         background: #fff;
+        z-index: 10;
     }
 
     .db-header-bar {

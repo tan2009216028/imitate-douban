@@ -9,12 +9,14 @@ import Vuex from 'vuex'
 
 import activity from './module/activity'
 import movie from './module/movie'
+import movieSynopsis from './module/movieSynopsis'
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
     modules: {
         activity,
-        movie
+        movie,
+        movieSynopsis
     }
 })

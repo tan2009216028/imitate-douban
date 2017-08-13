@@ -48,6 +48,7 @@
          * 定义元素无轮廓,除去焦点状态高亮边框样式
          */
         outline: none;
+        font-weight: normal;
     }
 
     /*

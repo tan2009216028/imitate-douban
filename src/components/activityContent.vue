@@ -97,7 +97,7 @@
             activityDetail(){
                 return this.$store.state.activity.detailItem
             },
-            activityThisContent: function () {
+            activityThisContent() {
                 return this.$store.state.activity.detailItem.content;
             }
         },

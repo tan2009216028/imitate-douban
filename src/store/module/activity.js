@@ -4,6 +4,7 @@
  * @describe: 获取活动数据接口
  * @date: 2017/8/3 22:54
  */
+'use strict';
 import request from 'superagent'
 import jsonp from 'superagent-jsonp'
 import myInterface from '@/interface'
