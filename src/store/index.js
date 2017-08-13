@@ -8,11 +8,13 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import activity from './module/activity'
+import movie from './module/movie'
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
     modules: {
-        activity
+        activity,
+        movie
     }
 })

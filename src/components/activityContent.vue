@@ -53,9 +53,10 @@
                 </div>
                 <div class="db-activity-stage">
                     <h3>活动详情</h3>
-                    <pre class="db-stage-content" v-html="activityContent"></pre>
+                    <div class="db-stage-content J_test" v-html="activityThisContent"></div>
                 </div>
             </div>
+            <down-load-app></down-load-app>
         </template>
         <loading v-show="!showType"></loading>
     </div>　　
@@ -63,6 +64,7 @@
 
 <script type="text/javascript">
     import loading from '@/components/loading'
+    import downLoadApp from '@/components/downLoadApp'
     export default {
         name:'activityContent',
         data() {
@@ -83,19 +85,24 @@
                 console.log(res)
             })
         },
+        directives:{
+            imgsrc:{
+                inserted:function (el, binding,vnode,oldVnode) {
+                    debugger
+
+                }
+            }
+        },
         computed:{
             activityDetail(){
                 return this.$store.state.activity.detailItem
             },
-            activityContent: function () {
-                return this.$store.state.activity.detailItem.content.replace(/https:/ig, 'http:')
-                // Careful XSS
-                // Remove copyright imgs
-//                return this.detailItem.content.replace(/<img.+?>/ig, '')
+            activityThisContent: function () {
+                return this.$store.state.activity.detailItem.content;
             }
         },
         components:{
-            loading
+            loading,downLoadApp
         }
     }
 </script>

@@ -15,6 +15,9 @@ const INTERFACE = {
     cityId:'118318',
     count:5,
     getActivityList: domain + '/v2/event/list', //获取活动列表
-    getActivityDetail: domain + '/v2/event/' //获取活动详情
+    getActivityDetail: domain + '/v2/event/', //获取活动详情
+    getShowMovieList:domain + '/v2/movie/in_theaters', //获取正在上映的电影
+    getWillShowMovieList:domain + '/v2/movie/coming_soon', //获取即将上映的电影
+    getTop250MovieList:domain + '/v2/movie/top250' //获取top250排行榜
 }
 export default INTERFACE;

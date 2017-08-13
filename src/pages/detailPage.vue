@@ -6,7 +6,6 @@
 </template>
 
 <script type="text/javascript">
-    import { mapState, mapActions } from 'vuex'
     import banner from "@/components/banner"
     import activityContent from "@/components/activityContent"
     export default {
