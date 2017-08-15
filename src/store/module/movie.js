@@ -5,7 +5,6 @@
  * @date: 2017/8/10 22:56
  */
 'use strict';
-
 import request from 'superagent'
 import jsonp from 'superagent-jsonp'
 import myInterface from '@/interface'
@@ -66,16 +65,16 @@ const mutations = {
     getMovie (state, payload) {
         switch (payload.tag) {
             case 'hotMovies':
-                state.hotMovies = payload.res
+                state.hotMovies = payload.res;
                 break
             case 'newMovies':
-                state.newMovies = payload.res
+                state.newMovies = payload.res;
                 break
             case 'topMovies':
-                state.topMovies = payload.res
+                state.topMovies = payload.res;
                 break
             default:
-                state.hotMovies = payload.res
+                state.hotMovies = payload.res;
         }
     }
 }
@@ -90,7 +89,6 @@ const actions = {
             .get(myInterface.getShowMovieList+'?count=10&city=成都')
             .use(jsonp)
             .end((err, res) => {
-                debugger
                 if (!err) {
                     commit({
                         type: 'getMovie',

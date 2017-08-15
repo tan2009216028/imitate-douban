@@ -1,9 +1,9 @@
 <template>
     <div class="db-movie-content">
-        <movie-scroll title="影院热映" type="hotMovies" :movieList="hotMovies" :toMoreUrl="baseUrl + 'movie/nowintheater?loc_id=118318'"></movie-scroll>
-        <movie-scroll title="免费在线观影" type="topMovies" :movieList="topMovies" :toMoreUrl="baseUrl + '/movie/watchonline'"></movie-scroll>
-        <movie-scroll title="新片速递" type="newMovies" :movieList="newMovies" :toMoreUrl="baseUrl + '/movie/latest'"></movie-scroll>
-        <movie-scroll title="发现好电影" type="movieTags" :movieList="movieTags"></movie-scroll>
+        <movie-scroll title="影院热映" type="movie" :sectionList="hotMovies" :toMoreUrl="baseUrl + 'movie/nowintheater?loc_id=118318'"></movie-scroll>
+        <movie-scroll title="免费在线观影" type="movie" :sectionList="topMovies" :toMoreUrl="baseUrl + '/movie/watchonline'"></movie-scroll>
+        <movie-scroll title="新片速递" type="movie" :sectionList="newMovies" :toMoreUrl="baseUrl + '/movie/latest'"></movie-scroll>
+        <movie-scroll title="发现好电影" type="sectionTags" :sectionList="movieTags"></movie-scroll>
         <div class="db-movie-classify">
             <h2>分类浏览</h2>
             <ul class="clearFix">
@@ -21,7 +21,7 @@
 
 <script type="text/javascript">
     import { mapState, mapActions } from 'vuex'
-    import movieScroll from "@/components/movieScroll"
+    import movieScroll from "@/components/sectionScroll"
     import downLoadApp from '@/components/downLoadApp'
     export default {
         name:'moviePage',

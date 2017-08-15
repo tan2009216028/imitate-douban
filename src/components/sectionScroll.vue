@@ -2,19 +2,20 @@
     <section class="db-movie-item">
         <header>
             <h2>{{title}}</h2>
-            <a :href="toMoreUrl" v-if="type !== 'movieTags'">更多</a>
+            <a :href="toMoreUrl || ''" v-if="type !== 'sectionTags'">更多</a>
         </header>
         <loading v-show="!showType"></loading>
         <div class="db-movie-list" v-if="showType">
-            <div v-if="movieList.length > 0">
-                <ul v-if="type === 'movieTags'">
-                    <li class="db-find-movie" v-for="item in movieList" :style="{borderColor: item.color}">
+            <slot name="filePromItem"></slot>
+            <div v-if="sectionList.length > 0">
+                <ul v-if="type === 'sectionTags'">
+                    <li class="db-find-area" v-for="item in sectionList" :style="{borderColor: item.color}">
                         <a :href="item.href" v-if="!item.line" :style="{color: item.color}">{{item.title}}</a>
                     </li>
                 </ul>
                 <ul v-else>
-                    <li v-for="item in movieList">
-                        <router-link :to="{name:'movieDescribe',query:{film:item.id}}">
+                    <li v-for="item in sectionList">
+                        <router-link :to="{name:linkName,query:{file:item.id}}">
                             <img v-if="item.images" :src="item.images.large" :alt="item.title">
                             <p class="db-movie-title">{{item.title}}</p>
                             <rating v-if="item.rating" :rating="item.rating"></rating>
@@ -36,6 +37,24 @@
                 showType:false
             }
         },
+        computed:{
+            linkName(){
+                let thisName = 'movieDescribe';
+                debugger
+                switch (this.type){
+                    case "movie":
+                        thisName = 'movieDescribe';
+                        break;
+                    case "book":
+                        thisName = 'bookDescribe';
+                        break;
+                    default:
+                        thisName = 'movieDescribe';
+
+                }
+                return thisName
+            }
+        },
         props:{
             title:{
                 type: String,
@@ -46,7 +65,7 @@
                 required: true
             },
             toMoreUrl:String,
-            movieList: {
+            sectionList: {
                 type: Array,
                 required: true
             }
@@ -117,13 +136,13 @@
                 text-overflow: ellipsis;
                 white-space: nowrap;
             }
-            .db-find-movie:empty{
+            .db-find-area:empty{
                 display: block;
                 height: 0.1rem;
                 border: 0;
                 margin: 0;
             }
-            .db-find-movie{
+            .db-find-area{
                 display: inline-block;
                 width: auto;
                 margin: 0 0 0.8rem 1.6rem;

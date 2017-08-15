@@ -10,6 +10,8 @@ import Vuex from 'vuex'
 import activity from './module/activity'
 import movie from './module/movie'
 import movieSynopsis from './module/movieSynopsis'
+import book from './module/book'
+import bookSynopsis from './module/bookSynopsis'
 
 Vue.use(Vuex);
 
@@ -17,6 +19,8 @@ export default new Vuex.Store({
     modules: {
         activity,
         movie,
-        movieSynopsis
+        movieSynopsis,
+        book,
+        bookSynopsis
     }
 })

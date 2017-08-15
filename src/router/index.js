@@ -7,8 +7,10 @@ import homePage from '@/pages/homePage'
 import detailPage from '@/pages/detailPage'
 import moviePage from '@/pages/moviePage'
 import filmPage from '@/pages/filmPage'
+import bookPage from '@/pages/bookPage'
+import bookDetailPage from '@/pages/bookDetailPage'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
     routes: [
@@ -43,7 +45,17 @@ export default new Router({
                     path: 'movie/detail',//电影详情
                     name: 'movieDescribe',
                     component: filmPage
-                }
+                },
+                {
+                    path: 'book',//图书板块
+                    name: 'bookPage',
+                    component: bookPage
+                },
+                {
+                    path: 'book/detail',//图书详情
+                    name: 'bookDescribe',
+                    component: bookDetailPage
+                },
             ]
         }
     ]

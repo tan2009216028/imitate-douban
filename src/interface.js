@@ -19,6 +19,8 @@ const INTERFACE = {
     getShowMovieList:domain + '/v2/movie/in_theaters', //获取正在上映的电影
     getWillShowMovieList:domain + '/v2/movie/coming_soon', //获取即将上映的电影
     getTop250MovieList:domain + '/v2/movie/top250', //获取top250排行榜
-    getMovieSynopsis:domain + '/v2/movie/subject/' //获取电影详情信息
+    getMovieSynopsis:domain + '/v2/movie/subject/', //获取电影详情信息
+    getBookList:domain + '/v2/book/search', //获取指定类型的图书信息
+    getBookSynopsis:domain + '/v2/book/', //获取图书详情信息
 }
 export default INTERFACE;
