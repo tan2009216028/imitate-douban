@@ -23,7 +23,7 @@ npm run build --report
 
 > * superagent——superagent是nodejs里一个非常方便的客户端请求代理模块，当你想处理get,post,put,delete,head请求时,你就应该想起该用它了
 > * vue-scroll-behavior——是一个定制导航路径上的滚动行为的插件，帮助你快速解决视图滚动位置的保存问题，尤其适用 hash 模式，同时以一种便捷的方式提供统一的滚动行为控制。
-
+> * 豆瓣小组模拟小组接口 http://rapapi.org/workspace/myWorkspace.action?projectId=24739#245838
 ## 项目更新记录
 
 > 1.  新增项目目录及基本配置                         2017-08-01
@@ -33,3 +33,4 @@ npm run build --report
 > 5.  完成电影详情展示        2017-08-14
 > 6.  完成图书部分数据获取及展示        2017-08-15
 > 7.  完成图书详情展示        2017-08-15
+> 8.  完成小组模拟接口数据返回        2017-08-21

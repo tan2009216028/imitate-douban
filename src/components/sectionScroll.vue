@@ -40,7 +40,6 @@
         computed:{
             linkName(){
                 let thisName = 'movieDescribe';
-                debugger
                 switch (this.type){
                     case "movie":
                         thisName = 'movieDescribe';

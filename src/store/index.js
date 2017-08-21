@@ -12,6 +12,8 @@ import movie from './module/movie'
 import movieSynopsis from './module/movieSynopsis'
 import book from './module/book'
 import bookSynopsis from './module/bookSynopsis'
+import broadcast from './module/broadcast'
+import group from './module/group'
 
 Vue.use(Vuex);
 
@@ -21,6 +23,8 @@ export default new Vuex.Store({
         movie,
         movieSynopsis,
         book,
-        bookSynopsis
+        bookSynopsis,
+        broadcast,
+        group
     }
 })

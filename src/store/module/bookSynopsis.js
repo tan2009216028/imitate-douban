@@ -93,7 +93,6 @@ const actions = {
                 .get(myInterface.getBookSynopsis + payload.id)
                 .use(jsonp)
                 .end((err, res) => {
-                debugger
                     if (!err) {
                         commit({
                             type: 'getBookItem',

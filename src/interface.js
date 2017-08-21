@@ -11,6 +11,8 @@
  */
 'use strict';
 const domain = 'https://api.douban.com';
+const lineDomain = 'https://m.douban.com';
+const rapapiDomain = 'http://rapapi.org';
 const INTERFACE = {
     cityId:'118318',
     count:5,
@@ -22,5 +24,7 @@ const INTERFACE = {
     getMovieSynopsis:domain + '/v2/movie/subject/', //获取电影详情信息
     getBookList:domain + '/v2/book/search', //获取指定类型的图书信息
     getBookSynopsis:domain + '/v2/book/', //获取图书详情信息
+    getBroadcastList:lineDomain + '/rexxar/api/v2/status/anonymous_timeline', //获取非登录用户广播
+    getRapapiList:rapapiDomain + '/mockjsdata/24739/group'  //模拟豆瓣小组接口
 }
 export default INTERFACE;

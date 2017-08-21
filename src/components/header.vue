@@ -16,12 +16,11 @@
                     <router-link :to="{name:'groupPage'}" style="color: #2AB8CC">小组</router-link>
                 </li>
                 <li>
-                    <span class="db-search" id="whole-search"></span>
+                    <span class="db-search" id="J_wholeSearch"></span>
                 </li>
             </ul>
         </div>
     </div>
-    　　
 </template>
 
 <script type="text/javascript">

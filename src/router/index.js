@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Hello from '@/components/Hello'
 import header from '@/components/header'
 import centerPage from '@/pages/centerPage'
 import homePage from '@/pages/homePage'
@@ -9,6 +8,8 @@ import moviePage from '@/pages/moviePage'
 import filmPage from '@/pages/filmPage'
 import bookPage from '@/pages/bookPage'
 import bookDetailPage from '@/pages/bookDetailPage'
+import broadcastPage from '@/pages/broadcastPage'
+import groupPage from '@/pages/groupPage'
 
 Vue.use(Router);
 
@@ -55,6 +56,16 @@ export default new Router({
                     path: 'book/detail',//图书详情
                     name: 'bookDescribe',
                     component: bookDetailPage
+                },
+                {
+                    path: 'status',//广播板块
+                    name: 'broadcastPage',
+                    component: broadcastPage
+                },
+                {
+                    path: 'groupPage',//小组板块
+                    name: 'groupPage',
+                    component: groupPage
                 },
             ]
         }
