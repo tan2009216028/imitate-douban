@@ -1,12 +1,27 @@
 <template>
     <div id="app">
-        <router-view></router-view>
+        <router-view @searchShow="getSearchShow"></router-view>
         <router-view name="centerPage"></router-view>
+        <search v-show="searchShowType" @searchShow="getSearchShow"></search>
     </div>
 </template>
 <script>
+    import search from "@/components/search"
     export default {
-        name: 'app'
+        name: 'app',
+        data(){
+          return {
+              searchShowType:false
+          }
+        },
+        components:{
+            search
+        },
+        methods:{
+            getSearchShow(data){
+                this.searchShowType = data.showType;
+            }
+        }
     }
 </script>
 

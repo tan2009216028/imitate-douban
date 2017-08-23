@@ -10,10 +10,10 @@
                         <img v-if="item.itemImg" :src="item.itemImg" :alt="item.itemTitle">
                         <div class="db-group-info">
                             <span>{{item.itemTitle}}</span>
-                            <p>{{item.itemContent}}</p>
                         </div>
                         <span class="db-group-member">{{item.followNum}}人</span>
                     </div>
+                    <p>{{item.itemContent}}</p>
                 </li>
             </ul>
             <a class="db-group-link">更多相关小组</a>
@@ -50,13 +50,21 @@
         }
         .db-group-content {
             li {
+                padding: 1.5rem 1.8rem 1.5rem 0;
                 border-bottom: 1px solid #F2F2F2;
                 overflow: hidden;
+                p{
+                    margin-top: 1rem;
+                    font-size: 1.5rem;
+                    color: #aaa;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
             }
             .db-group-meta{
                 position: relative;
                 display: flex;
-                padding: 1.5rem 1.8rem 1.5rem 0;
                 align-items: center;
                 img {
                     width: 4rem;
@@ -74,14 +82,7 @@
                     color: #ccc;
                     font-size: 1.5rem;
                 }
-                p{
-                    margin-top: 1rem;
-                    font-size: 1.5rem;
-                    color: #aaa;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
+
             }
         }
         .db-group-link {

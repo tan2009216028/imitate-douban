@@ -16,7 +16,7 @@
                     <router-link :to="{name:'groupPage'}" style="color: #2AB8CC">小组</router-link>
                 </li>
                 <li>
-                    <span class="db-search" id="J_wholeSearch"></span>
+                    <span class="db-search"  @click="showSearch"></span>
                 </li>
             </ul>
         </div>
@@ -28,6 +28,13 @@
         data() {
             return {
                 dbTitle: '豆瓣'
+            }
+        },
+        methods:{
+            showSearch(){
+                this.$emit('searchShow',{
+                    showType:true
+                });
             }
         }
     }

@@ -10,6 +10,9 @@ import bookPage from '@/pages/bookPage'
 import bookDetailPage from '@/pages/bookDetailPage'
 import broadcastPage from '@/pages/broadcastPage'
 import groupPage from '@/pages/groupPage'
+import searchPage from '@/pages/searchPage'
+import loginPage from '@/pages/loginPage'
+import registerPage from '@/pages/registerPage'
 
 Vue.use(Router);
 
@@ -26,6 +29,16 @@ export default new Router({
                     path: '',
                     name: 'homePage',
                     component: homePage
+                },
+                {
+                    path: 'login',
+                    name: 'loginPage',
+                    component: loginPage
+                },
+                {
+                    path: 'register',
+                    name: 'registerPage',
+                    component: registerPage
                 },
                 // {
                 //     path: 'detail/:id', //通过params参数传递方式传递活动id
@@ -63,9 +76,14 @@ export default new Router({
                     component: broadcastPage
                 },
                 {
-                    path: 'groupPage',//小组板块
+                    path: 'group',//小组板块
                     name: 'groupPage',
                     component: groupPage
+                },
+                {
+                    path: 'search',//小组板块
+                    name: 'searchPage',
+                    component: searchPage
                 },
             ]
         }

@@ -14,6 +14,7 @@ import book from './module/book'
 import bookSynopsis from './module/bookSynopsis'
 import broadcast from './module/broadcast'
 import group from './module/group'
+import search from './module/search'
 
 Vue.use(Vuex);
 
@@ -25,6 +26,7 @@ export default new Vuex.Store({
         book,
         bookSynopsis,
         broadcast,
-        group
+        group,
+        search
     }
 })
