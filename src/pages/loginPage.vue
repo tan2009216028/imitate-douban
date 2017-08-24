@@ -1,32 +1,35 @@
 <template>
-    <div class="db-login-view">
-        <h1>
-            <a @click="goHomeBack">取消</a>登录豆瓣
-        </h1>
-        <form >
-            <div class="db-form-user">
-                <label>
-                    <input v-model="userAccount" type="email" name="email" placeholder="邮箱 / 手机号 / 用户名">
-                </label>
-            </div>
-            <div class="db-form-pwd">
-                <label>
-                    <input v-model="userPassword" type="password" name="token"  placeholder="密码">
-                    <span class="db-show-pwd" :class="{show: isShow}" @click="showPwd()"></span>
-                </label>
-            </div>
-            <div class="">
-                <button class="submit" type="submit" >{{loginState}}</button>
-            </div>
-        </form>
-        <div class="db-login-footer">
-            <div class="db-more-login">使用其他方式登录 &amp; 找回密码</div>
-            <div class="db-login-btns">
-                <router-link :to="{name: 'registerPage'}">注册豆瓣帐号</router-link>
-                <a href="#">下载豆瓣App</a>
+    <transition name="slide-fade">
+        <div class="db-login-view">
+            <h1>
+                <a @click="goHomeBack">取消</a>登录豆瓣
+            </h1>
+            <form method="get" @submit.prevent="onSubmit()">
+                <div class="db-form-user">
+                    <label>
+                        <input v-model="userAccount" type="text" placeholder="邮箱 / 手机号 / 用户名">
+                    </label>
+                </div>
+                <div class="db-form-pwd">
+                    <label>
+                        <input v-model="userPassword" type="password" name="token"  placeholder="密码">
+                        <span class="db-show-pwd" :class="{show: isShow}" @click="showPwd()"></span>
+                    </label>
+                </div>
+                <div class="">
+                    <button class="submit" type="submit" >{{loginState}}</button>
+                </div>
+            </form>
+            <div class="db-login-footer">
+                <div class="db-more-login">使用其他方式登录 &amp; 找回密码</div>
+                <div class="db-login-btns">
+                    <router-link :to="{name: 'registerPage'}">注册豆瓣帐号</router-link>
+                    <a href="#">下载豆瓣App</a>
+                </div>
             </div>
         </div>
-    </div>
+    </transition>
+
 </template>
 
 <script>
@@ -45,14 +48,28 @@
                 this.$root.$children[0].searchShowType = false;
                 this.$router.push({
                     path: '/',
-
                 })
+            },
+            onSubmit(){
+                this.$userInfo.userAccount = this.userAccount;
+                this.$userInfo.userPassword = this.userPassword;
+                this.goHomeBack();
             }
         }
     }
 </script>
 
 <style lang="scss" scoped>
+    .slide-fade-enter-active {
+        transition: all .3s ease;
+    }
+    .slide-fade-leave-active {
+        transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    }
+    .slide-fade-enter, .slide-fade-leave-to{
+        transform: translateY(10px);
+        opacity: 0;
+    }
     .db-login-view {
         position: fixed;
         top:0;

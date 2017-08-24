@@ -27,6 +27,13 @@
                 getListArr:state => state.activity.list
             })
         },
+        mounted (){
+            this.$nextTick(function () {
+                if(this.$userInfo.userAccount){
+                    this.$message.show("欢迎"+this.$userInfo.userAccount+'回来');
+                }
+            })
+        },
         methods:{
             onInfinite(){
                 setTimeout(() => {
