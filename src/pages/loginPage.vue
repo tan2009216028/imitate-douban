@@ -11,10 +11,9 @@
                     </label>
                 </div>
                 <div class="db-form-pwd">
-                    <label>
-                        <input v-model="userPassword" type="password" name="token"  placeholder="密码">
-                        <span class="db-show-pwd" :class="{show: isShow}" @click="showPwd()"></span>
-                    </label>
+                    <input v-model.trim="userPassword" v-if="passType === 'password'" type="password"  placeholder="密码">
+                    <input v-model.trim="userPassword" v-else type="text"  name="userPassword" placeholder="密码">
+                    <span class="db-show-pwd" :class="{show: isShow}" @click="userShowPwd()"></span>
                 </div>
                 <div class="">
                     <button class="submit" type="submit" >{{loginState}}</button>
@@ -40,7 +39,8 @@
                 loginState: '登录',
                 userAccount:'',
                 userPassword:'',
-                isShow: 0
+                passType:'password',
+                isShow: false
             }
         },
         methods:{
@@ -49,6 +49,10 @@
                 this.$router.push({
                     path: '/',
                 })
+            },
+            userShowPwd(){
+                this.isShow = !this.isShow;
+                this.passType = this.passType == "password" ? "text" : "password";
             },
             onSubmit(){
                 this.$userInfo.userAccount = this.userAccount;
