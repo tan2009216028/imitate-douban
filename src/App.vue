@@ -74,6 +74,7 @@
          */
         outline: none;
         font-weight: normal;
+        -webkit-overflow-scrolling : touch;
     }
 
     /*
