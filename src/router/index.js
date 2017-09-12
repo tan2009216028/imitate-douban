@@ -31,12 +31,12 @@ export default new Router({
                     component: homePage
                 },
                 {
-                    path: 'login',
+                    path: 'login', //登录
                     name: 'loginPage',
                     component: loginPage
                 },
                 {
-                    path: 'register',
+                    path: 'register',//注册
                     name: 'registerPage',
                     component: registerPage
                 },

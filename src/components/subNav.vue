@@ -2,10 +2,22 @@
     <div class="db-sub-nav">
         <div class="db-no-login">
             <ul class="ul-li-float clearFix">
-                <li><a href="">影院热映</a></li>
+                <li>
+                    <router-link :to="{path:'movie'}">
+                        影院热映
+                    </router-link>
+                </li>
                 <li><a href="">欧美新碟榜</a></li>
-                <li><a href="">注册帐号</a></li>
-                <li><a href="">登录豆瓣</a></li>
+                <li>
+                    <router-link :to="{path:'register'}">
+                        注册帐号
+                    </router-link>
+                </li>
+                <li>
+                    <router-link :to="{path:'login'}">
+                        登录豆瓣
+                    </router-link>
+                </li>
             </ul>
         </div>
     </div>
@@ -20,20 +32,21 @@
 </script>
 
 <style lang="scss" scoped="">
-    .db-sub-nav{
+    .db-sub-nav {
         padding-top: 0.2rem;
         margin: 1rem 1.8rem 0;
         padding-top: 0.6rem;
     }
-    .db-sub-nav{
-        li{
+
+    .db-sub-nav {
+        li {
             padding: 0.3rem;
             width: 50%;
             font-size: 1.5rem;
             text-align: center;
             box-sizing: border-box;
         }
-        li a{
+        li a {
             display: block;
             padding: 1.2rem 0;
             line-height: 2rem;

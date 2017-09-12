@@ -9,10 +9,10 @@
         <ul class="db-plate-list">
             <li>
                 <div>
-                    <a href="#" >
+                    <router-link :to="{path:'movie'}">
                         <strong style="color: rgb(35, 132, 232);">电影</strong>
                         <span>影院热映</span>
-                    </a>
+                    </router-link>
                     <a href="#" >
                         <strong style="color: rgb(230, 70, 126);">同城</strong>
                         <span>周末活动</span>
@@ -70,7 +70,11 @@
         </ul>
         <div class="db-search-login">
             <ul class="ul-li-float clearFix">
-                <li><a href="">注册帐号</a></li>
+                <li>
+                    <router-link :to="{name:'registerPage'}">
+                        注册帐号
+                    </router-link>
+                </li>
                 <li><router-link :to="{name:'loginPage'}" replace>登录豆瓣</router-link></li>
                 <li><a href="">使用桌面版</a></li>
                 <li><a href="">使用豆瓣App</a></li>
