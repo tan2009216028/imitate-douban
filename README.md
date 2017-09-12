@@ -41,6 +41,13 @@ npm run build --report
 
 ## 项目截图
 
-![Alt text | center | 600x0](./src/assets/1.png)
-![Alt text | center | 600x0](./src/assets/2.png)
-![Alt text | center | 600x0](./src/assets/3.png)
+![项目截图](./src/assets/1.png)
+![项目截图](./src/assets/2.png)
+![项目截图](./src/assets/3.png)
+![项目截图](./src/assets/4.png)
+![项目截图](./src/assets/5.png)
+![项目截图](./src/assets/6.png)
+![项目截图](./src/assets/7.png)
+![项目截图](./src/assets/8.png)
+![项目截图](./src/assets/9.png)
+![项目截图](./src/assets/10.png)
