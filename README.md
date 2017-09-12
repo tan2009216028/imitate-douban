@@ -41,4 +41,6 @@ npm run build --report
 
 ## 项目截图
 
-![Alt text | center | 600x0](./static/1.png)
+![Alt text | center | 600x0](./src/assets/1.png)
+![Alt text | center | 600x0](./src/assets/2.png)
+![Alt text | center | 600x0](./src/assets/3.png)
