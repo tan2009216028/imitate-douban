@@ -40,6 +40,7 @@ const actions = {
             .use(jsonp)
             .end((err, res) => {
                 if (!err) {
+                    console.log("撒s")
                     commit({
                         type: 'getMoreData',
                         res: res.body.events

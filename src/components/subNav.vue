@@ -26,14 +26,15 @@
 <script type="text/javascript">
     export default {
         data() {
-            return {}
+            return {
+                a:'aa'
+            }
         }
     }
 </script>
 
 <style lang="scss" scoped="">
     .db-sub-nav {
-        padding-top: 0.2rem;
         margin: 1rem 1.8rem 0;
         padding-top: 0.6rem;
     }

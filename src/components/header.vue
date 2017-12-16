@@ -48,7 +48,7 @@
         right: 0;
         align-items: center;
         padding: 0 1.8rem;
-        height: 4.8rem;
+        height: 4.7rem;
         border-bottom: 0.1rem solid #f3f3f3;
         background: #fff;
         z-index: 10;
@@ -76,10 +76,13 @@
         }
         .db-tab-list {
             li{
-                font-size: 1.6rem;
-                margin-right: 1.2rem;
+                font-size: 1.5rem;
+                margin-right: 1.8rem;
                 a{
                     display: block;
+                }
+                &:last-child{
+                    margin: 0;
                 }
             }
             .db-search{

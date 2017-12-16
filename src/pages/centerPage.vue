@@ -15,5 +15,6 @@
 <style lang="scss">
     .db-content{
         margin-top: 4.8rem;
+        overflow-x: hidden;
     }
 </style>
