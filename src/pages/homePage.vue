@@ -2,7 +2,7 @@
     <div class="db-home-page">
         <sub-nav></sub-nav>　　
         <home-list :list="getListArr"></home-list>
-        <infinite-loading :on-infinite="onInfinite" ref="infiniteLoading">
+        <infinite-loading @infinite="infiniteLoading" :distance="distance" ref="infiniteLoading">
             <loading slot="spinner"></loading>
         </infinite-loading>
     </div>
@@ -17,7 +17,9 @@
     export default {
         name: 'homePage',
         data() {
-            return {}
+            return {
+                distance:30
+            }
         },
         components:{
             subNav,homeList,InfiniteLoading,loading
@@ -35,12 +37,16 @@
             })
         },
         methods:{
-            onInfinite(){
+            //父级节点必须要有高度
+            infiniteLoading($state) {
                 setTimeout(() => {
-                    this.getActivityList();
-                    //$InfiniteLoading:loaded事件,它将告诉InfiniteLoading组件，数据已经下载成功。
-                    this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded')
-                }, 1000)
+                    this.$store.dispatch({
+                        type: 'getActivityList'
+                    }).then(res => {
+                        console.log(res);
+                        $state.loaded();
+                    });
+                },1000)
             },
             // 异步action暴露辅助方法
             ...mapActions([
@@ -50,5 +56,9 @@
     }
 </script>
 
-<style>
+<style lang="scss" scoped>
+    .db-home-page{
+        position: relative;
+        height: calc(100vh - 4.7rem)
+    }
 </style>
